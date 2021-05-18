@@ -9,12 +9,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Datasource {
 
-    @Bean
-    @ConfigurationProperties("app.datasource")
-    public HikariDataSource hikariDataSource() {
-        return DataSourceBuilder
-                .create()
-                .type(HikariDataSource.class)
-                .build();
-    }
+//    @Bean
+//    @ConfigurationProperties("spring.datasource")
+//    public HikariDataSource hikariDataSource() {
+//        System.out.println("konfigurasi hikari");
+//        return DataSourceBuilder
+//                .create()
+//                .type(HikariDataSource.class)
+//                .build();
+//    }
 }

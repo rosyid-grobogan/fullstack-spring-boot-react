@@ -3,9 +3,18 @@ server:
     context-path: /api
   port: 8182
 
-app:
+spring:
   datasource:
-    jdbc-url: jdbc:postgresql://localhost:5432/students_fullstack
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/latihandocker
     username: postgres
     password: rahasia
     pool-size: 30
+    type: com.zaxxer.hikari.HikariDataSource
+
+  flyway:
+    baselineOnMigrate: true
+    check-location: true
+    locations: classpath:db/migration
+    schemas: public
+    enabled: true
