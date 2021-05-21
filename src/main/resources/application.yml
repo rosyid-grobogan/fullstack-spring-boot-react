@@ -2,6 +2,8 @@ server:
   servlet:
     context-path: /api
   port: 8182
+  error:
+    include-message: always
 
 spring:
   datasource:
