@@ -1,5 +1,6 @@
 package com.rosyidgrobogan.fullstackspringbootreact.student;
 
+import com.rosyidgrobogan.fullstackspringbootreact.exception.ApiRequestException;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -12,7 +13,8 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
-        throw new IllegalArgumentException("Oops cannot get all students");
+        throw new ApiRequestException("Oops cannot get all students");
+//        throw new IllegalStateException("Oops cannot get all students with custom exception");
 //        return List.of(
 //                new Student(
 //                        UUID.randomUUID(),
