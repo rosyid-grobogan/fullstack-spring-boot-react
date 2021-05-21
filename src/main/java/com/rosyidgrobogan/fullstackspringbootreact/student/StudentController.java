@@ -1,9 +1,11 @@
 package com.rosyidgrobogan.fullstackspringbootreact.student;
 
 import com.rosyidgrobogan.fullstackspringbootreact.exception.ApiRequestException;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,8 +37,13 @@ public class StudentController {
     }
 
     @PostMapping
-    public void addNewStudent(@RequestBody Student student) {
-        System.out.println(student);
+    public void addNewStudent(@RequestBody @Valid Student student) {
+        try {
+            System.out.println(student);
+        }catch (RuntimeException e) {
+            throw new ApiRequestException("Oops cannot get all students");
+        }
+
     }
 
 }
