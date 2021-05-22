@@ -26,7 +26,7 @@ public class StudentController {
         try {
             return studentService.getAll();
         } catch (RuntimeException e) {
-            throw new ApiRequestException("Oops cannot get all students");
+            throw new ApiRequestException(e.getMessage());
         }
     }
 
@@ -36,7 +36,7 @@ public class StudentController {
             studentService.insert(request);
             System.out.println("REQUEST" + request);
         }catch (RuntimeException e) {
-            throw new ApiRequestException("Oops cannot insert students");
+            throw new ApiRequestException(e.getMessage());
         }
 
     }
